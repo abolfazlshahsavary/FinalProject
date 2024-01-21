@@ -1,0 +1,141 @@
+\documentclass{article}
+\usepackage[colorlinks]{hyperref}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{\text{Final Assignment}} % Set the left header text and style
+\rhead{\text{Computer Workshop Course}} % Set the right header text (page number)
+
+\usepackage{graphicx} % Required for inserting images
+
+\title{\bf{Final Assignment:\\
+Integration of Tools and Practices}\\
+Iran University of Science and Technology\\
+Department of Computer Engineering}
+
+
+\author{Dr. MalekiMajd\\
+Computer Workshop 02-03}
+\date{Due Date: 7 Bahman}
+
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section*{Introduction}
+\paragraph{This final assignment is designed to encapsulate the core skills and knowledge you have
+acquired throughout the course. It will require you to apply all the tools and practices
+covered, including Git, LaTeX, and more. This assignment must be submitted as a
+LaTeX document managed under version control using Git, with the repository hosted
+on GitHub and the document compiled using GitHub Actions.}
+\section*{Instructions}
+\paragraph{1. Create a new GitHub repository and clone it to your local machine.\\
+2. Write your assignment document in LaTeX, commit your changes regularly, and
+push them to your GitHub repository.\\
+3. Set up GitHub Actions to compile your LaTeX document to a PDF upon every tag
+in the repository.\\
+4. The document should include sections for each category of the questions.}
+\subsection*{More on GitHub Actions}
+\paragraph{We have already experimented with GitHub actions in the al-folio template before. In
+this sections, you will be using GitHub actions to compile the LaTeX file you write and
+upload it on the "Releases section" of your repository.
+In order to do this, here are some links that help you achieve this:\\
+}
+\begin{itemize}
+    \item \url {https://mrturkmen.com/posts/build-release-latex/}
+This link will overall help you to understand what is going on in the Action.
+     \item \url{ https://github.com/MiliAxe/CW1402Final}
+This is repository created especially for this assignment, it has the GitHub action
+already setup and running. feel free to use the workflow .yml for your own usage.
+\end{itemize}
+
+\paragraph{\bf{NOTE:} The Action is triggered on every new tag with the format *.*.*. Learn about
+tags by searching and make sure to tag the commit you want to compile to PDF using
+GitHub Actions.}
+\subsection{LaTeX Document Guidelines}
+\paragraph{You must create a structured LaTeX document including a title page, sections for each
+task, and a page for table of contents.}
+\newpage
+\section*{Assignments}
+\paragraph{Here, you will find the questions/problems you have to answer in your LaTeX file.\\\\
+\bf{NOTE:} Make sure to write them in your LaTeX file and make commits for each section
+you write.}
+\section{Git and GitHub}
+\subsection{Repository Initialization and Commits}
+\paragraph{Write about how you set up the repository for this assignment. Explain every step in
+detail.}
+\subsection{GitHub Actions for LaTeX Compilation}
+\paragraph{Provide a walkthrough of setting up GitHub Actions to automatically compile your LaTeX
+document and any challenges you encountered.}
+\section{Exploration Tasks}
+\subsection{Vim Advanced Features}
+\paragraph{Explore and document 3 advanced features of Vim that were not covered in class.}
+\subsection{Memory profiling}
+\paragraph{This semester, you got to know about dynamic memory allocation in C in your Programming
+Fundamentals class.}
+\subsubsection{Memory Leak}
+\paragraph{In short, explain what memory leaks are and how they might happen in your program.}
+\subsubsection{Memory profilers}
+\paragraph{Read about a tool called Valgrind and write about their purpose and how it helps when
+memory leaks happen.}
+\subsection{GNU/Linux Bash Scripting}
+\paragraph{GNU/Linux Bash Scripting}
+\subsubsection{fzf}
+\paragraph{Read about a handy CLI tool called fzf and answer the following questions:}
+\begin{itemize}
+    \item  What is fuzzy searching? Give a short description.
+    \item Install fzf on your machine and give a description of what the following command
+does:\\
+ls {\|} fzf
+
+
+\end{itemize}
+\subsubsection{Using fzf to find your favorite PDF}
+\paragraph{You might have came across moments when you want to open up a certain PDF when
+studying for your final exams but finding the directory of that PDF is a very gruesome
+and tiring process. In this section, we will be using fzf to find our PDF in seconds! We
+will be going step by step on how to find your file and use fzf to select it.}
+\begin{enumerate}
+    \item We first need to list the directory of all the files with the extension .PDF. Write a
+command to list the directory of all the files with the extension .PDF\\
+\bf{HINT:} use the command fd for this purpose.
+    \item Now we have to select the PDF we want using fzf. Write a command to use fzf to
+select a PDF from the data we gathered above.
+\end{enumerate}
+\subsubsection{Opening the file using Zathura}
+\paragraph{Now that we have selected which PDF we want to open, we can use a very minimalistic
+program called Zathura to open it. Write a command that uses the commands above to
+open the file using Zathura.\\
+\bf{HINT:} This is how Zathura opens files: zathura /path/to/file\\ \\
+\bf{HINT:} Learn what the syntax zathura \$(command) does and use it to open the PDF
+we have selected.\\ \\}
+\section{Git and FOSS}
+\subsubsection{README.md}
+\paragraph{Make sure to include a basic README.md file in your GitHub repository that describes
+the aim of this repository and its purpose.}
+\subsection{Issues}
+\paragraph{Create a sample issue in the repository below and attach its screenshot in your LaTeX
+document:\\
+\url{https://github.com/MiliAxe/CW1402Final
+Page}}
+\section*{Submission Guidelines}
+\paragraph{Your final submission should include:}
+\begin{itemize}
+    \item A link to your GitHub repository.
+\item  The compiled PDF of your LaTeX document.
+\item  All source files used in the creation of the document
+\end{itemize}
+\section{Evaluation Criteria}
+\paragraph{You will be evaluated on the following}
+\begin{itemize}
+    \item The completeness and quality of your LaTeX document.
+\item The use of Git and GitHub, including commit history and usage of GitHub Actions.
+\item The depth of exploration and learning in each of the tasks.
+\item Your ability to follow the submission guidelines accurately.
+\end{itemize}
+\paragraph{goodluck}
+
+
+
+\end{document}
