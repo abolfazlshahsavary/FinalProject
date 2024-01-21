@@ -17,7 +17,7 @@ jobs:
     - name: Set up LaTeX environment
       uses: evanp/latex-action@v2.1.0
       with:
-        version: "texlive" # or "texlive" for TeX Live or "miktex" for MiKTeX
+        version: "miktex" # or "texlive" for TeX Live or "miktex" for MiKTeX
     - name: Build LaTeX Document(s)
       uses: rstacruz/latex-compile@v1.1.0
       with:
