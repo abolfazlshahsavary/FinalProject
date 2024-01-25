@@ -1,24 +1,39 @@
-name: Latex Build
-
+name: Release Compiled PDF 
 on:
   push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+    tags:
+      - '*.*.*'
 
 jobs:
-  build-latex:
+  build_latex:
+    permissions: write-all
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-    - name: Set up LaTeX environment
-      uses: evanp/latex-action@v2.1.0
-      with:
-        version: "miktex" # or "texlive" for TeX Live or "miktex" for MiKTeX
-    - name: Build LaTeX Document(s)
-      uses: rstacruz/latex-compile@v1.1.0
-      with:
-        source_file: "*.tex" # replace "your_latex_file.tex" with the name of your LaTeX file(s) separated by commas for multiple files. You can also use wildcards like "*" or "**" to compile all LaTeX files in a directory or subdirectory. ```
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v2
+        with:
+          root_file: main.tex
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} 
+          asset_path: ./main.pdf
+          asset_name: main.pdf
+          asset_content_type: pdf
